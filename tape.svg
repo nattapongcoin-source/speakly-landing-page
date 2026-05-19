@@ -1,0 +1,19 @@
+<svg width="180" height="96" viewBox="0 0 180 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tape" x1="14" y1="22" x2="162" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7D8"/>
+      <stop offset="0.35" stop-color="#F0E5B1"/>
+      <stop offset="0.72" stop-color="#E5D58A"/>
+      <stop offset="1" stop-color="#F6EDC8"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="180" height="96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M14 33C32 26 56 24 83 26C110 28 136 33 166 42L160 65C132 57 108 53 83 51C58 49 34 52 12 59L14 33Z" fill="url(#tape)"/>
+    <path d="M24 35C43 30 65 29 90 32C113 35 136 40 155 46" stroke="white" stroke-opacity="0.25" stroke-width="4" stroke-linecap="round"/>
+    <path d="M17 55C36 49 59 47 86 49C113 52 140 57 162 64" stroke="rgba(130,110,20,0.12)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 59C18 58 24 56 31 54" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 5"/>
+  </g>
+</svg>
