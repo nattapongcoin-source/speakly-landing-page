@@ -1246,17 +1246,25 @@
         }
 
         @media (max-width: 800px) {
+            .navbar {
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 12px;
+            }
+
             .nav-links {
                 display: none;
             }
 
             .navbar-inner {
-                padding: 12px 20px;
+                padding: 10px 14px;
+                border-radius: 24px;
+                gap: 12px;
             }
 
             .hero {
-                min-height: 82vh;
-                padding: 156px 20px 56px;
+                min-height: auto;
+                padding: 136px 18px 44px;
                 text-align: center;
             }
 
@@ -1264,33 +1272,89 @@
                 margin: 0 auto;
             }
 
+            .hero-note {
+                margin-bottom: 14px;
+                letter-spacing: 0.12em;
+            }
+
+            .hero-title {
+                font-size: clamp(34px, 9.2vw, 54px);
+                line-height: 0.98;
+                letter-spacing: -0.05em;
+                margin-bottom: 10px;
+            }
+
+            .hero-title-stack {
+                max-width: 100%;
+                line-height: 1.02;
+            }
+
+            .hero-inline-icon {
+                width: 0.74em;
+                height: 0.74em;
+                margin-left: 0.08em;
+                vertical-align: -0.07em;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                margin: 14px auto 18px;
+                max-width: 34ch;
+            }
+
+            .hero-actions {
+                gap: 12px;
+            }
+
+            .app-store-btn {
+                width: min(100%, 320px);
+                justify-content: center;
+                padding: 16px 24px;
+                font-size: 15px;
+                border-radius: 18px;
+            }
+
             .device-showcase {
-                margin-top: -84px;
-                padding: 24px 18px 120px;
-                min-height: 340vh;
+                margin-top: -20px;
+                padding: 10px 16px 56px;
+                min-height: auto;
             }
 
             .device-stage {
-                top: 5vh;
-                min-height: 76vh;
-            }
-
-            .device-phone {
-                width: min(290px, 78vw);
+                position: relative;
+                top: auto;
+                min-height: auto;
             }
 
             .device-stack {
-                width: calc(100vw - 36px);
-                height: min(68vh, 620px);
+                width: 100%;
+                height: auto;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 18px;
+                justify-items: center;
+            }
+
+            .device-phone {
+                position: relative;
+                left: auto;
+                top: auto;
+                opacity: 1 !important;
+                transform: none !important;
+                width: min(86vw, 320px);
+                filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.14));
+                pointer-events: auto;
             }
 
             .features {
-                padding: 22px 18px 52px;
+                padding: 28px 18px 56px;
             }
 
             .feature-board {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
+                gap: 14px;
+                margin-top: 28px;
             }
 
             .feature-card.card-blue,
@@ -1304,24 +1368,25 @@
             }
 
             .section-title {
-                font-size: 34px;
+                font-size: clamp(28px, 8vw, 34px);
+                line-height: 1.02;
             }
 
             .download-section {
-                padding-left: 18px;
-                padding-right: 18px;
+                padding: 24px 16px 72px;
             }
 
             .cta-shell {
-                border-radius: 30px;
-                padding: 18px 16px 20px;
+                border-radius: 28px;
+                padding: 18px 14px 16px;
+                min-height: auto;
             }
 
             .contact-card {
                 width: 100%;
                 margin-top: 22px;
-                padding: 18px;
-                border-radius: 24px;
+                padding: 16px;
+                border-radius: 22px;
             }
 
             .contact-row {
@@ -1332,21 +1397,75 @@
                 padding-top: 0;
                 padding-right: 0;
                 max-width: none;
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
             }
 
             .contact-form-shell {
-                padding: 22px 18px 20px;
+                padding: 18px 14px 14px;
                 min-height: 0;
+                border-radius: 22px;
             }
 
-            .contact-copy {
-                padding-top: 0;
-                padding-right: 0;
-                max-width: none;
+            .contact-input-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .contact-input {
+                width: 100%;
+                height: 52px;
+                padding: 0 18px;
+                font-size: 16px;
+            }
+
+            .contact-submit {
+                width: 100%;
+                height: 52px;
+                font-size: 16px;
             }
 
             .footer {
                 padding: 36px 20px 56px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 124px;
+            }
+
+            .hero-title {
+                font-size: clamp(32px, 10vw, 42px);
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+                max-width: 31ch;
+            }
+
+            .device-phone {
+                width: min(90vw, 300px);
+            }
+
+            .feature-card {
+                padding: 12px;
+                border-radius: 20px;
+            }
+
+            .feature-visual {
+                min-height: 120px;
+                border-radius: 16px;
+            }
+
+            .cta-shell {
+                background-position: center top;
+            }
+
+            .contact-topline-name {
+                font-size: 18px;
             }
         }
 
@@ -1621,6 +1740,16 @@
         const section = document.querySelector('.device-showcase');
         const phones = section ? Array.from(section.querySelectorAll('.device-phone')) : [];
         if (!section || phones.length !== 3) return;
+        const isMobile = window.matchMedia('(max-width: 800px)');
+
+        if (isMobile.matches) {
+            phones.forEach((phone) => {
+                phone.style.zIndex = '';
+                phone.style.transform = '';
+                phone.style.opacity = '1';
+            });
+            return;
+        }
 
         const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
         const lerp = (start, end, amount) => start + (end - start) * amount;
